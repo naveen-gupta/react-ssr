@@ -1,3 +1,5 @@
-//Startup point
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Home from './components/Home';
 
-console.log('Hi There');
+ReactDOM.hydrate(<Home />, document.getElementById('root'));

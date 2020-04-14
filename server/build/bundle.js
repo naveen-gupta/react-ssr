@@ -7041,10 +7041,11 @@ var Home = __webpack_require__(122).default;
 
 var app = express();
 
+app.use(express.static('public'));
 app.get('/', function (req, res) {
     var content = renderToString(React.createElement(Home, null));
-
-    res.send(content);
+    var html = '\n    <html>\n        <head>\n        </head>\n        <body>\n            <div id="root">\n                ' + content + '\n            </div>\n        </body>\n        <script src="bundle.js"></script>\n    </html>\n    ';
+    res.send(html);
 });
 
 app.listen(3000, function () {
