@@ -80,29 +80,21 @@ var _express = __webpack_require__(2);
 
 var _express2 = _interopRequireDefault(_express);
 
-var _react = __webpack_require__(0);
+var _helpers = __webpack_require__(3);
 
-var _react2 = _interopRequireDefault(_react);
-
-var _server = __webpack_require__(3);
-
-var _Home = __webpack_require__(4);
-
-var _Home2 = _interopRequireDefault(_Home);
+var _helpers2 = _interopRequireDefault(_helpers);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var app = (0, _express2.default)();
 
-app.use(_express2.default.static('public'));
-app.get('/', function (req, res) {
-    var content = (0, _server.renderToString)(_react2.default.createElement(_Home2.default, null));
-    var html = '\n    <html>\n        <head>\n        </head>\n        <body>\n            <div id="root">\n                ' + content + '\n            </div>\n        </body>\n        <script src="bundle.js"></script>\n    </html>\n    ';
-    res.send(html);
+app.use(_express2.default.static("public"));
+app.get("/", function (req, res) {
+  res.send((0, _helpers2.default)());
 });
 
 app.listen(3000, function () {
-    console.log('Listening on port 3000');
+  console.log("Listening on port 3000");
 });
 
 /***/ }),
@@ -113,12 +105,40 @@ module.exports = require("express");
 
 /***/ }),
 /* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _server = __webpack_require__(4);
+
+var _Home = __webpack_require__(5);
+
+var _Home2 = _interopRequireDefault(_Home);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function () {
+    var content = (0, _server.renderToString)(_react2.default.createElement(_Home2.default, null));
+    return "\n    <html>\n        <head>\n        </head>\n        <body>\n            <div id=\"root\">\n                " + content + "\n            </div>\n        </body>\n        <script src=\"bundle.js\"></script>\n    </html>\n    ";
+};
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
