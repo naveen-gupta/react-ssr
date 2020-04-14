@@ -22711,7 +22711,7 @@ module.exports = camelize;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _react = __webpack_require__(15);
@@ -22721,11 +22721,22 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Home = function Home() {
-    return _react2.default.createElement(
-        'div',
-        null,
-        'Home Component!!'
-    );
+  return _react2.default.createElement(
+    "div",
+    null,
+    _react2.default.createElement(
+      "div",
+      null,
+      "Home Component!!"
+    ),
+    _react2.default.createElement(
+      "button",
+      { onClick: function onClick() {
+          return console.log('Hi');
+        } },
+      "Click Me!"
+    )
+  );
 };
 
 exports.default = Home;
