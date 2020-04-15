@@ -32,4 +32,8 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
+export const loadData = () => {
+  console.log('hi');
+}
+
 export default connect(mapStateToProps, mapDispatchToProps)(UsersList);
