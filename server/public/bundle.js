@@ -38291,8 +38291,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-var loadData = exports.loadData = function loadData() {
-  console.log('hi');
+var loadData = exports.loadData = function loadData(store) {
+  return store.dispatch((0, _actions.fetchUsers)());
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(UsersList);
